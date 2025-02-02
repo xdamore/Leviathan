@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mystery</title>
+    <style>
+        /* Подключаем шрифт */
+        @font-face {
+            font-family: 'Death Note';
+            src: url('static/Death Note.woff2') format('woff2');
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .bg-img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: url('static/Rules_I.jpg') no-repeat center center;
+            background-size: contain;
+            background-color: black;
+        }
+        .glitch-text {
+            position: absolute;
+            font-size: 1.2rem; /* Уменьшаем размер шрифта */
+            color: white;
+            opacity: 0;
+            animation: matrixFade 10s infinite; /* Увеличиваем продолжительность анимации */
+            white-space: nowrap;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.6), 0 0 10px rgba(255, 255, 255, 0.6);
+            font-family: 'Death Note', sans-serif; /* Применяем шрифт Death Note */
+        }
+
+        @keyframes matrixFade {
+            0% { opacity: 0; transform: translateY(0); }
+            10% { opacity: 1; transform: translateY(-2px); }
+            50% { opacity: 0.5; transform: translateY(2px); }
+            90% { opacity: 0.2; transform: translateY(0); }
+            100% { opacity: 0; transform: translateY(0); }
+        }
+
+        /* Стили для случайных позиций */
+        .glitch-text:nth-child(1) { top: 10%; left: 15%; animation-delay: 0s; }
+        .glitch-text:nth-child(2) { top: 30%; left: 40%; animation-delay: 2s; }
+        .glitch-text:nth-child(3) { top: 50%; left: 60%; animation-delay: 4s; }
+        .glitch-text:nth-child(4) { top: 70%; left: 80%; animation-delay: 6s; }
+        .glitch-text:nth-child(5) { top: 20%; left: 70%; animation-delay: 1s; }
+        .glitch-text:nth-child(6) { top: 60%; left: 30%; animation-delay: 3s; }
+        .glitch-text:nth-child(7) { top: 80%; left: 10%; animation-delay: 5s; }
+        .glitch-text:nth-child(8) { top: 25%; left: 5%; animation-delay: 7s; }
+        .glitch-text:nth-child(9) { top: 40%; left: 80%; animation-delay: 8s; }
+        .glitch-text:nth-child(10) { top: 55%; left: 50%; animation-delay: 9s; }
+        .glitch-text:nth-child(11) { top: 65%; left: 20%; animation-delay: 10s; }
+        .glitch-text:nth-child(12) { top: 85%; left: 50%; animation-delay: 11s; }
+
+    </style>
+</head>
+<body>
+    <div class="bg-img"></div>
+    <div class="glitch-text">Abyssus abyssum invocat</div>
+    <div class="glitch-text">Day 312. The internet still isn't working.</div>
+    <div class="glitch-text">You woke up. But she didn't.</div>
+    <div class="glitch-text">I never go to bed, but I wake up every time.</div>
+    <div class="glitch-text">Fear we'll have for breakfast, and for lunch — indescribable horror!</div>
+    <div class="glitch-text">AL, did you know that the gods of death only eat apples?</div>
+    <div class="glitch-text">Abyssus abyssum invocat</div>
+    <div class="glitch-text">Day 312. The internet still isn't working.</div>
+    <div class="glitch-text">You woke up. But she didn't.</div>
+    <div class="glitch-text">I never go to bed, but I wake up every time.</div>
+    <div class="glitch-text">Fear we'll have for breakfast, and for lunch — indescribable horror!</div>
+    <div class="glitch-text">AL, did you know that the gods of death only eat apples?</div>
+    <audio autoplay loop>
+        <source src="static/mystery_music.mp3" type="audio/mp3">
+    </audio>
+</body>
+</html>

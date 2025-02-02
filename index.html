@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leviathan</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="crt.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+</head>
+
+<body>
+	<audio id="lucifer-audio" src="static/audio.mp3" autoplaystyle="display:none"></audio>
+
+    <div class="wallpaper" id="wallpaper">
+        <div class="center-screen">
+            <div class="alignment-text">
+                <h1 class="big" style="color: #696969;">Leviathan</h1>
+                <div class="hover-person">
+                    <h1 class="animate__animated animate__fadeInDown"><a style="color: #696969; text-decoration: none;"
+                            href="https://discord.gg/9VWctkzz" target="_blank">Xdamore</a></h1>
+                </div>
+                <div class="hover-person">
+                    <h1 class="animate__animated animate__fadeInRight"><a style="color: #696969; text-decoration: none;"
+                            href="https://discord.gg/4yx4atz7" target="_blank">Nkozey</a></h1>
+                </div>
+                <div class="hover-person-2">
+                    <h1 class="animate__animated animate__fadeInRight"><a style="color: #696969; text-decoration: none;"
+                            href="https://t.me/wholeeness" target="_blank">Wholeeness</a></h1>
+                </div>
+
+                <h1 class="small" style="color: #fff;">Click/press enter to select a user</h1>
+            </div>
+            <div class="footer">
+                &copy;<a style="color: #fff; text-decoration: none;" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                    target="_blank">dont click</a> Code <a style="color: #fff; text-decoration: none;" href="mystery.html" target="_blank">changed</a>
+            </div>
+        </div>
+    </div>
+	<script>
+		(function () {
+			const hoaAudio = document.getElementById('lucifer-audio');
+
+			function catchHandler() {
+				let inputListener;
+				inputListener = function () {
+					hoaAudio.play();
+					document.removeEventListener('mousedown', inputListener);
+					document.removeEventListener('keydown', inputListener);
+				};
+
+				document.addEventListener('mousedown', inputListener);
+				document.addEventListener('keydown', inputListener);
+			}
+
+			if (hoaAudio.readyState > 1) {
+				hoaAudio.play().catch(catchHandler);
+			} else {
+				hoaAudio.addEventListener('canplay', function () {
+					hoaAudio.play().catch(catchHandler);
+				});
+			}
+		})();
+	</script>
+    
+</body>
+
+</html>
