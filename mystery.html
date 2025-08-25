@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mystery</title>
     <style>
-        /* Подключаем шрифт */
         @font-face {
             font-family: 'Death Note';
             src: url('static/Death Note.woff2') format('woff2');
@@ -31,13 +30,13 @@
         }
         .glitch-text {
             position: absolute;
-            font-size: 1.2rem; /* Уменьшаем размер шрифта */
+            font-size: 1.2rem;
             color: white;
             opacity: 0;
-            animation: matrixFade 10s infinite; /* Увеличиваем продолжительность анимации */
+            animation: matrixFade 10s infinite;
             white-space: nowrap;
             text-shadow: 0 0 5px rgba(255, 255, 255, 0.6), 0 0 10px rgba(255, 255, 255, 0.6);
-            font-family: 'Death Note', sans-serif; /* Применяем шрифт Death Note */
+            font-family: 'Death Note', sans-serif;
         }
 
         @keyframes matrixFade {
@@ -48,7 +47,6 @@
             100% { opacity: 0; transform: translateY(0); }
         }
 
-        /* Стили для случайных позиций */
         .glitch-text:nth-child(1) { top: 10%; left: 15%; animation-delay: 0s; }
         .glitch-text:nth-child(2) { top: 30%; left: 40%; animation-delay: 2s; }
         .glitch-text:nth-child(3) { top: 50%; left: 60%; animation-delay: 4s; }
@@ -82,4 +80,5 @@
         <source src="static/mystery_music.mp3" type="audio/mp3">
     </audio>
 </body>
+
 </html>
