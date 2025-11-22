@@ -13,7 +13,7 @@
 </head>
 
 <body>
-	<audio id="lucifer-audio" src="static/audio.mp3" autoplaystyle="display:none"></audio>
+    <audio id="lucifer-audio" src="static/audio.mp3" autoplay style="display:none"></audio>
 
     <div class="wallpaper" id="wallpaper">
         <div class="center-screen">
@@ -40,32 +40,33 @@
             </div>
         </div>
     </div>
-	<script>
-		(function () {
-			const hoaAudio = document.getElementById('lucifer-audio');
 
-			function catchHandler() {
-				let inputListener;
-				inputListener = function () {
-					hoaAudio.play();
-					document.removeEventListener('mousedown', inputListener);
-					document.removeEventListener('keydown', inputListener);
-				};
+    <script>
+        (function () {
+            const hoaAudio = document.getElementById('lucifer-audio');
 
-				document.addEventListener('mousedown', inputListener);
-				document.addEventListener('keydown', inputListener);
-			}
+            function catchHandler() {
+                let inputListener;
+                inputListener = function () {
+                    hoaAudio.play();
+                    document.removeEventListener('mousedown', inputListener);
+                    document.removeEventListener('keydown', inputListener);
+                };
 
-			if (hoaAudio.readyState > 1) {
-				hoaAudio.play().catch(catchHandler);
-			} else {
-				hoaAudio.addEventListener('canplay', function () {
-					hoaAudio.play().catch(catchHandler);
-				});
-			}
-		})();
-	</script>
-    
+                document.addEventListener('mousedown', inputListener);
+                document.addEventListener('keydown', inputListener);
+            }
+
+            if (hoaAudio.readyState > 1) {
+                hoaAudio.play().catch(catchHandler);
+            } else {
+                hoaAudio.addEventListener('canplay', function () {
+                    hoaAudio.play().catch(catchHandler);
+                });
+            }
+        })();
+    </script>
+
 </body>
 
 </html>
