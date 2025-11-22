@@ -11,7 +11,7 @@ No backend, no analytics, no fancy tricks. Just a clean little hub that exists b
 Big shoutout to **Reikolol** (author of **lucifer.run**) - the original codebase this project is based on.
 
 I’m not claiming originality or authorship over the core structure.  
-I was just messing around with HTML/CSS as a self-taught newbie (and it kinda shows lol).  
+I’m basically a self-taught newbie who just dived into the code, didn’t know much at first, and learned as I went, tweaking stuff and adding my own small ideas along the way (lol).  
 Much respect to the original creator.
 
 ## 🛠 Tech Stack
