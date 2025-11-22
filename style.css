@@ -18,11 +18,15 @@ html {
 
 .wallpaper {
     background-image: url("static/bg.gif");
-    background-size: cover; 
+    background-size: cover;
     background-position: center;
     height: 100vh;
+    position: relative;
 }
 
+.bg-box {
+    display: none;
+}
 
 .center-screen {
     display: flex;
@@ -85,7 +89,6 @@ h1 {
     font: bold 0.4vw "Zpix";
 }
 
-/* Glitch effect */
 @keyframes glitch {
     2%, 64% { transform: translate(2px, 0) skew(0deg); }
     4%, 60% { transform: translate(-2px, 0) skew(0deg); }
@@ -110,8 +113,26 @@ div:after {
     62% { transform: translate(-22px, 5px) skew(21deg); }
 }
 
-
 @media screen and (max-width: 768px) {
+
+    .wallpaper {
+        background: none;
+    }
+
+    .bg-box {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("static/bg.gif");
+        background-size: contain; 
+        background-repeat: no-repeat;
+        background-position: center;
+        z-index: -1; 
+    }
+
     .center-screen {
         justify-content: center;
         align-items: center;
