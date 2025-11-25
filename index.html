@@ -40,7 +40,7 @@
 
                 <div class="hover-person-2">
                     <h1 class="animate__animated animate__fadeInRight">
-                        <a style="color: #696969; text-decoration: none;" href="https://t.me/wholeeness" target="_blank">Mournix</a>
+                        <a style="color: #696969; text-decoration: none;" href="https://t.me/wholeeness" target="_blank">Nvyxen</a>
                     </h1>
                 </div>
 
@@ -73,7 +73,7 @@
             }
 
             function enableAudioOnInteraction() {
-                let listener = function () {
+                const listener = () => {
                     audio.play();
                     document.removeEventListener('mousedown', listener);
                     document.removeEventListener('touchstart', listener);
@@ -83,6 +83,7 @@
                 document.addEventListener('touchstart', listener);
                 document.addEventListener('keydown', listener);
             }
+
 
             function tryPlay() {
                 audio.play().catch(enableAudioOnInteraction);
