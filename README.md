@@ -14,6 +14,15 @@ I’m not claiming originality or authorship over the core structure.
 I’m basically a self-taught newbie who just dived into the code, didn’t know much at first, and learned as I went, tweaking stuff and adding my own small ideas along the way (lol).  
 Much respect to the original creator.
 
+### 🎵 Music
+- **PC version**: *Mercy* by [Atherian](https://www.youtube.com/@AtherianZ)  
+  YouTube link: [https://www.youtube.com/@AtherianZ](https://www.youtube.com/watch?v=7Yv2O14SlGQ)
+
+- **Mobile version**: *Fading Away – Sad, Helpless and Depressing Lofi Beats*  
+  YouTube link: [https://www.youtube.com/@midnight_blue5145](https://www.youtube.com/watch?v=lnkzI7lCtyw)
+
+Thanks to these artists for creating such awesome tracks that make the site’s vibe come alive!
+
 ## 🛠 Tech Stack
 - Static HTML/CSS  
 - No JavaScript required  
