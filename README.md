@@ -31,9 +31,9 @@ Thanks to these artists for creating such awesome tracks that make the site’s 
 - Minimalistic by design  
 - Hosted as-is
 
-## 🔗 Links
-Original creator’s Telegram:  
-- **Reikolol** - t.me/Reikolol
+## 🔗 Original Code / Links
+The original codebase for this project was created by **Reikolol** (author of lucifer.run).  
+Telegram: [t.me/Reikolol](https://t.me/Reikolol)  
 
 ## 📜 License / Usage
 Feel free to reference or borrow ideas from this project, but make sure to credit the original author (not me lmao).  
