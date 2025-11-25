@@ -5,14 +5,12 @@
     font-style: normal;
 }
 
-body,
-html {
+html, body {
     margin: 0;
     padding: 0;
     height: 100%;
     overflow: hidden;
     -webkit-user-select: none;
-    -ms-user-select: none;
     user-select: none;
 }
 
@@ -24,7 +22,8 @@ html {
     position: relative;
 }
 
-.bg-box {
+.mobile-box-top,
+.mobile-box-bottom {
     display: none;
 }
 
@@ -37,21 +36,19 @@ html {
 }
 
 .alignment-text {
-    text-align: left !important;
     padding: 200px;
+    text-align: left!important;
 }
 
 h1 {
-    color: #000;
-    overflow-x: hidden;
-    overflow-y: hidden;
-    border: none;
+    margin: 0;
     font: bold 2vw "Zpix";
+    color: #000;
 }
 
 .big {
-    margin-bottom: 10px !important;
     font: bold 4vw "Zpix";
+    margin-bottom: 10px;
     animation: glitch 2s linear infinite;
 }
 
@@ -60,77 +57,45 @@ h1 {
     animation: glitch 2s linear infinite;
 }
 
-.hover-person, .hover-person-2 {
-    overflow: hidden;
-}
-
-.hover-person:hover h1 {
-    margin-left: 80px;
-}
-
-.hover-person-2:hover h1 {
-    margin-left: 68px;
-}
-
-.animate__animated.animate__fadeInDown,
-.animate__animated.animate__fadeInRight,
-.animate__animated.animate__fadeInUp {
-    --animate-duration: 2s;
-}
+.hover-person:hover h1 { margin-left: 80px; }
+.hover-person-2:hover h1 { margin-left: 68px; }
 
 .footer {
     position: fixed;
+    bottom: 10px;
     left: 0;
-    bottom: 0;
-    margin-bottom: 10px;
     width: 100%;
-    color: #fff;
     text-align: center;
     font: bold 0.4vw "Zpix";
-}
-
-@keyframes glitch {
-    2%, 64% { transform: translate(2px, 0) skew(0deg); }
-    4%, 60% { transform: translate(-2px, 0) skew(0deg); }
-    62% { transform: translate(0, 0) skew(5deg); }
-}
-
-@keyframes glitchTop {
-    2%, 64% { transform: translate(2px, -2px); }
-    4%, 60% { transform: translate(-2px, 2px); }
-    62% { transform: translate(13px, -1px) skew(-13deg); }
-}
-
-div:after {
-    animation: glitchBotom 1.5s linear infinite;
-    clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
-    -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
-}
-
-@keyframes glitchBotom {
-    2%, 64% { transform: translate(-2px, 0); }
-    4%, 60% { transform: translate(-2px, 0); }
-    62% { transform: translate(-22px, 5px) skew(21deg); }
+    color: #fff;
 }
 
 @media screen and (max-width: 768px) {
 
     .wallpaper {
-        background: none;
-    }
-
-    .bg-box {
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-image: url("static/bg.gif");
-        background-size: contain; 
+        background-image: url("static/mobile-bg.gif");
+        background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
-        z-index: -1; 
+    }
+
+    .mobile-box-top,
+    .mobile-box-bottom {
+        display: block;
+        position: absolute;
+        width: 100%;
+        background: black;
+        z-index: -1;
+    }
+
+    .mobile-box-top {
+        height: 12vh;
+        top: 0;
+    }
+
+    .mobile-box-bottom {
+        height: 12vh;
+        bottom: 0;
     }
 
     .center-screen {
@@ -139,24 +104,30 @@ div:after {
     }
 
     .alignment-text {
-        text-align: center !important;
         padding: 20px;
+        text-align: center!important;
     }
 
     .big {
-        font: bold clamp(20px, 10vw, 40px) "Zpix";
+        font: bold clamp(24px, 10vw, 40px) "Zpix";
     }
 
     .small {
-        font: bold clamp(10px, 5vw, 16px) "Zpix";
+        font: bold clamp(12px, 5vw, 20px) "Zpix";
     }
 
     .hover-person:hover h1,
     .hover-person-2:hover h1 {
-        margin-left: 0; 
+        margin-left: 0;
     }
 
     .footer {
         font: bold 12px "Zpix";
     }
+}
+
+@keyframes glitch {
+    2%,64% { transform: translate(2px,0) skew(0deg); }
+    4%,60% { transform: translate(-2px,0) skew(0deg); }
+    62% { transform: translate(0,0) skew(5deg); }
 }
