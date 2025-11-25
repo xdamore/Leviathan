@@ -9,65 +9,94 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="crt.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-
 </head>
 
 <body>
-    <audio id="lucifer-audio" src="static/audio.mp3" autoplay style="display:none"></audio>
 
-    <div class="wallpaper" id="wallpaper">
-        <div class="bg-box"></div>
+    <audio id="desktop-audio" src="static/audio.mp3" autoplay style="display:none"></audio>
+
+    <audio id="mobile-audio" src="static/mobile-audio.mp3" style="display:none"></audio>
+
+    <div class="wallpaper">
+
+        <div class="mobile-box-top"></div>
+        <div class="mobile-box-bottom"></div>
+
         <div class="center-screen">
             <div class="alignment-text">
                 <h1 class="big" style="color: #696969;">Leviathan</h1>
+
                 <div class="hover-person">
-                    <h1 class="animate__animated animate__fadeInDown"><a style="color: #696969; text-decoration: none;"
-                            href="https://t.me/trymeth" target="_blank">Xdamore</a></h1>
+                    <h1 class="animate__animated animate__fadeInDown">
+                        <a style="color: #696969; text-decoration: none;" href="https://t.me/trymeth" target="_blank">Xdamore</a>
+                    </h1>
                 </div>
+
                 <div class="hover-person">
-                    <h1 class="animate__animated animate__fadeInRight"><a style="color: #696969; text-decoration: none;"
-                            href="https://t.me/nkozey" target="_blank">Nkozey</a></h1>
+                    <h1 class="animate__animated animate__fadeInRight">
+                        <a style="color: #696969; text-decoration: none;" href="https://t.me/nkozey" target="_blank">Nkozey</a>
+                    </h1>
                 </div>
+
                 <div class="hover-person-2">
-                    <h1 class="animate__animated animate__fadeInRight"><a style="color: #696969; text-decoration: none;"
-                            href="https://t.me/wholeeness" target="_blank">Nvyxen</a></h1>
+                    <h1 class="animate__animated animate__fadeInRight">
+                        <a style="color: #696969; text-decoration: none;" href="https://t.me/wholeeness" target="_blank">Mournix</a>
+                    </h1>
                 </div>
 
                 <h1 class="small" style="color: #fff;">Click/press enter to select a user</h1>
             </div>
+
             <div class="footer">
-                &copy;<a style="color: #fff; text-decoration: none;" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-                    target="_blank">dont click</a> Code <a style="color: #fff; text-decoration: none;" href="mystery.html" target="_blank">changed</a>
+                &copy;<a style="color: #fff; text-decoration: none;"
+                    href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">dont click</a>
+                Code <a style="color: #fff; text-decoration: none;" href="mystery.html" target="_blank">changed</a>
             </div>
         </div>
     </div>
 
     <script>
         (function () {
-            const hoaAudio = document.getElementById('lucifer-audio');
+            const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 
-            function catchHandler() {
-                let inputListener;
-                inputListener = function () {
-                    hoaAudio.play();
-                    document.removeEventListener('mousedown', inputListener);
-                    document.removeEventListener('keydown', inputListener);
-                };
+            const desktopAudio = document.getElementById('desktop-audio');
+            const mobileAudio = document.getElementById('mobile-audio');
 
-                document.addEventListener('mousedown', inputListener);
-                document.addEventListener('keydown', inputListener);
+            const audio = isMobile ? mobileAudio : desktopAudio;
+
+            if (isMobile) {
+                desktopAudio.pause();
+                desktopAudio.currentTime = 0;
+            } else {
+                mobileAudio.pause();
+                mobileAudio.currentTime = 0;
             }
 
-            if (hoaAudio.readyState > 1) {
-                hoaAudio.play().catch(catchHandler);
+            function enableAudioOnInteraction() {
+                let listener = function () {
+                    audio.play();
+                    document.removeEventListener('mousedown', listener);
+                    document.removeEventListener('touchstart', listener);
+                    document.removeEventListener('keydown', listener);
+                };
+                document.addEventListener('mousedown', listener);
+                document.addEventListener('touchstart', listener);
+                document.addEventListener('keydown', listener);
+            }
+
+            function tryPlay() {
+                audio.play().catch(enableAudioOnInteraction);
+            }
+
+            if (audio.readyState > 1) {
+                tryPlay();
             } else {
-                hoaAudio.addEventListener('canplay', function () {
-                    hoaAudio.play().catch(catchHandler);
-                });
+                audio.addEventListener('canplay', tryPlay);
             }
         })();
     </script>
 
-</body>
+    <script src="static/mobilebg.js"></script>
 
+</body>
 </html>
