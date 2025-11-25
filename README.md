@@ -16,16 +16,17 @@ Much respect to the original creator.
 
 ### 🎵 Music
 - **PC version**: *Mercy* by [Atherian](https://www.youtube.com/@AtherianZ)  
-  YouTube link: [https://www.youtube.com/@AtherianZ](https://www.youtube.com/watch?v=7Yv2O14SlGQ)
+  YouTube link: [https://www.youtube.com/watch?v=7Yv2O14SlGQ](https://www.youtube.com/watch?v=7Yv2O14SlGQ)
 
 - **Mobile version**: *Fading Away – Sad, Helpless and Depressing Lofi Beats*  
-  YouTube link: [https://www.youtube.com/@midnight_blue5145](https://www.youtube.com/watch?v=lnkzI7lCtyw)
+  YouTube link: [https://www.youtube.com/watch?v=lnkzI7lCtyw](https://www.youtube.com/watch?v=lnkzI7lCtyw)
 
 Thanks to these artists for creating such awesome tracks that make the site’s vibe come alive!
 
+
 ## 🛠 Tech Stack
 - Static HTML/CSS  
-- No JavaScript required  
+- JavaScript for mobile audio and background adaptation  
 - No backend  
 - Minimalistic by design  
 - Hosted as-is
